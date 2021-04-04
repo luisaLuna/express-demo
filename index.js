@@ -24,6 +24,11 @@ app.post('/about', (req, res) => {
     res.send('POST REQUEST ON /about (This is different than a get request!');
 });
 
+app.get('/r/:subreddit', (req, res) => {
+    const { subreddit } = req.params;
+    res.send(`<h1>Browsing the ${subreddit} subreddit </h1>`);
+})
+
 
 app.get('*', (req, res) => {
     res.send("I don't know that route");
